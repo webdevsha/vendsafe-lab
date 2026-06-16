@@ -162,13 +162,37 @@ All experiments write turn-level JSON logs to `logs/`:
 
 Start with Experiment 7 (cheapest) to verify your setup works
 
+---
+
+## Regenerating the Report
+
+You can regenerate the report yourself by running:
+
+```bash
+python parse_logs.py
+python generate_report.py
+```
+
+But you don't need to — `report.html` already has the rendered results with all
+data baked in, so you can open it directly without running anything.
+
+---
+
+## Advanced Usage
+
 ### Pull & generate report
+
+```bash
 # Pull
 python parse_logs.py  
 
 # Open the report in Irori
 python generate_report.py --open
+```
 
+### On-budget run
+
+```bash
 # On budget run
 python experiment_07_threshold.py --balance comfortable --trigger recall
 python experiment_07_threshold.py --balance struggling --trigger recall
